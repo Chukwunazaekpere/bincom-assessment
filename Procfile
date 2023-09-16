@@ -1,1 +1,1 @@
-web: gunicorn errands.wsgi --timeout 120 --log-file -
+web: gunicorn elections.wsgi --timeout 120 --log-file -
