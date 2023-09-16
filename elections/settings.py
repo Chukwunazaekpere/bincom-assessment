@@ -138,3 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "agents.Agents"
+
+ALLOWED_HOSTS = [
+    'naza-bin-com-test-d87522aefc5f.herokuapp.com',
+]
