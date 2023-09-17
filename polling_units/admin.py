@@ -12,6 +12,7 @@ from .models import (
 )
 class PartyAdmin(admin.ModelAdmin):
     list_display = ["party_id", "party_name"]
+    ordering = ['party_id']
     
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
@@ -22,6 +23,7 @@ admin.site.register(Party, PartyAdmin)
 
 class StateAdmin(admin.ModelAdmin):
     list_display = ["state_id", "state_name"]
+    ordering = ['state_id']
     
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
@@ -32,6 +34,7 @@ admin.site.register(State, StateAdmin)
 
 class LGAAdmin(admin.ModelAdmin):
     list_display = ["lga_id", "lga_name", "state", "lga_description", "entered_by_user", "user_ip_address", "date_entered"]
+    ordering = ['lga_id']
  
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
@@ -43,6 +46,7 @@ admin.site.register(LGA, LGAAdmin)
 
 class WardAdmin(admin.ModelAdmin):
     list_display = ["ward_name", "ward_id", "lga", "ward_description", "entered_by_user"]
+    ordering = ['ward_id']
  
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
@@ -52,6 +56,7 @@ admin.site.register(Ward, WardAdmin)
 
 class PollingUnitAdmin(admin.ModelAdmin):
     list_display = ["polling_unit_name", "polling_unit_id", "lga", "ward", "polling_unit_description", "entered_by_user"]
+    ordering = ['polling_unit_id']
  
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()

@@ -10,6 +10,7 @@ from .models import Agents
 
 class AgentAdmin(admin.ModelAdmin):
     list_display = ['agents_fullname', "email", "phone", 'name_id', "polling_unit"]
+    ordering = ['last_login']
 
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
@@ -34,10 +35,10 @@ class AgentAdmin(admin.ModelAdmin):
                 new_agent.save()
         return super().get_list_display(request)
 admin.site.register(Agents, AgentAdmin)
-admin.site.site_header = "Bincom Test (2011 Elections)"
+admin.site.site_header = "Bincom Test (Chukwunazaekpere 2011 Elections)"
 # admin.site.unregister(Group)
-admin.site.site_title = "Bincom Test (2011 Elections)"
-admin.site.index_title = "Bincom Test (2011 Elections)"
+admin.site.site_title = "Bincom Test (Chukwunazaekpere 2011 Elections)"
+admin.site.index_title = "Bincom Test (Chukwunazaekpere 2011 Elections)"
 
 
 AGENTS = [
