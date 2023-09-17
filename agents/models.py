@@ -49,10 +49,10 @@ class BaseUserModelManager(BaseUserManager):
 
 
 class Agents(AbstractBaseUser, PermissionsMixin):
-    name_id = models.PositiveIntegerField(unique=True, null=False)
+    name_id = models.PositiveIntegerField(unique=True, null=False, help_text="Enter 1 for default name id")
     firstname = models.CharField(max_length=25, null=False)
     lastname = models.CharField(max_length=25, null=False)
-    password = models.CharField(max_length=200, help_text="Enter 1 for password")
+    password = models.CharField(max_length=200, help_text="Enter 1 for default password")
     email = models.EmailField()
     phone = models.CharField(max_length=13, null=False, unique=True)
     is_anonymous = models.BooleanField(default=True)
