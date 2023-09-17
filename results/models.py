@@ -31,8 +31,8 @@ class AnnouncedPUResult(models.Model):
     date_entered = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "Announced LGA Result"
-        verbose_name_plural = "Announced LGA Results"
+        verbose_name = "Announced Pollin-units Result"
+        verbose_name_plural = "Announced Pollin-units Results"
 
     def lga(self):
         polling_unit = PollingUnit.objects.filter(lga_id=self.polling_unit_uniqueid.lga_id)
