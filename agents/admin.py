@@ -34,7 +34,10 @@ class AgentAdmin(admin.ModelAdmin):
                 new_agent.save()
         return super().get_list_display(request)
 admin.site.register(Agents, AgentAdmin)
+admin.site.site_header = "Bincom Test (2011 Elections)"
 # admin.site.unregister(Group)
+admin.site.site_title = "Bincom Test (2011 Elections)"
+admin.site.index_title = "Bincom Test (2011 Elections)"
 
 
 AGENTS = [
