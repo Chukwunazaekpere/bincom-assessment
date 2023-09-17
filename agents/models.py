@@ -71,6 +71,9 @@ class Agents(AbstractBaseUser, PermissionsMixin):
         return f"{self.firstname} {self.lastname}"
     agents_fullname.short_description = "Agents fullname"
 
+    def __str__(self):
+        return self.agents_fullname()
+
     
     # def save(self, using):
     #     agents = Agents()
