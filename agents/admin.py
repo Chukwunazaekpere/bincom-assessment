@@ -9,7 +9,7 @@ from django.db.models import Q
 from .models import Agents
 
 class AgentAdmin(admin.ModelAdmin):
-    list_display = ['name_id', 'agents_fullname', "email", "phone", "polling_unit"]
+    list_display = ['agents_fullname', "email", "phone", 'name_id', "polling_unit"]
 
     def get_list_display(self, request: HttpRequest) -> Sequence[str]:
         default_data = DefaultData()
